@@ -24,5 +24,10 @@ class PersonalController extends BaseController{
         // http://localhost/Nathalie/public/personal/editar
         echo "Estoy editando";        
     }
+    
+    public function getEliminar(){
+        
+        echo "Estoy eliminando";        
+    }
 }
 
