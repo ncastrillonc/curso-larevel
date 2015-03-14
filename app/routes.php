@@ -31,3 +31,4 @@ Route::get('/prueba2', function()
 
 // Simepre se debe regitrar cada controlador
 Route::controller('personal', 'PersonalController');
+Route::controller('clase', 'Clase2Controller');
