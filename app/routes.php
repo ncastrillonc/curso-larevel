@@ -11,46 +11,18 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/natha.chara', function()
 {
         // VISTA 'prueba'hello' de la carpeta views
-        return View::make('hello');
-});
-
-Route::get('/prueba', function()
-{
-        // VISTA prueba de la carpeta views
-	return View::make('prueba');
-});
-
-Route::get('/prueba2', function()
-{
-        // VISTA prueba de la carpeta views
-	return View::make('prueba2');
-});
-
-Route::get('/dia', function()
-{
-        // VISTA prueba de la carpeta views
-	return View::make('diagramar');
+        return View::make('perfil.profile')
+            ->with("nombre", "Nathalie");
 });
 
 Route::get('/test', function()
 {
-        // VISTA prueba de la carpeta views
-	return View::make('ejemplo');
-});
-
-Route::get('/task', function()
-{
-        // VISTA prueba de la carpeta views
-	return View::make('tarea1');
-});
-
-Route::get('/task2', function()
-{
-        // VISTA prueba de la carpeta views
-	return View::make('tarea1_v2');
+        // VISTA 'prueba'hello' de la carpeta views
+        return View::make('masterpage.template')
+                ->with("nombre", "Nata");
 });
 
 // Simepre se debe regitrar cada controlador
