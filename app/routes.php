@@ -41,6 +41,18 @@ Route::get('/test', function()
 	return View::make('ejemplo');
 });
 
+Route::get('/task', function()
+{
+        // VISTA prueba de la carpeta views
+	return View::make('tarea1');
+});
+
+Route::get('/task2', function()
+{
+        // VISTA prueba de la carpeta views
+	return View::make('tarea1_v2');
+});
+
 // Simepre se debe regitrar cada controlador
 Route::controller('personal', 'PersonalController');
 Route::controller('clase', 'Clase2Controller');

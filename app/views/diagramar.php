@@ -30,8 +30,8 @@
 
 <html>
     <head>
-        <link  rel="stylesheet" href="../../public/assets/css/style.css" type="text/css" />
-        <link rel="stylesheet" href="../../public/assets/libs/bootstrap/css/bootstrap.min.css" type="text/css">
+        <link  rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css" type="text/css">
     </head>
     <body>
 <!--<div class="container">
@@ -76,7 +76,7 @@
 
         <!-- Maquetar Página --> 
         <div class="container">
-            <div class="row">
+            <div class="row" col-sm-offset-6>
                 <!-- A -->
                 <nav class="navbar navbar-default">
                   <div class="container-fluid">
