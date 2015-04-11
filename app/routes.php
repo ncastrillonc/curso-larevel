@@ -11,11 +11,37 @@
 |
 */
 
-Route::get('/natha.chara', function()
+Route::get('/profile', array('before' => 'auth', function()
 {
         // VISTA 'prueba'hello' de la carpeta views
         return View::make('perfil.profile')
-            ->with("nombre", "Nathalie");
+            ->with("nombre", Auth::user()->nombre_completo);
+}));
+
+Route::get('/login', function()
+{
+        // VISTA 'prueba'hello' de la carpeta views
+        return View::make('general.login');
+});
+
+Route::post('/loguear', function()
+{
+        $email = Input::get('login');
+        $password = Input::get('password');
+        
+        if (Auth::attempt(array('correo' => $email, 'password' => $password))) {
+            return Redirect::to("/profile");
+        } else {
+            echo 'No logueado ';
+        }
+});
+
+Route::get('/logout', function()
+{
+        Auth::logout();
+        Session::flush();
+        return Redirect::to('/login');
+        
 });
 
 Route::get('/test', function()
