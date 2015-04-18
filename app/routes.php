@@ -13,9 +13,11 @@
 
 Route::get('/profile', array('before' => 'auth', function()
 {
-        // VISTA 'prueba'hello' de la carpeta views
+        $publicaciones = publicacion::orderBy('id','desc')->get();
+    
         return View::make('perfil.profile')
-            ->with("nombre", Auth::user()->nombre_completo);
+            ->with("nombre", Auth::user()->nombre_completo)
+            ->with("publicaciones", $publicaciones);
 }));
 
 Route::get('/login', function()
@@ -54,3 +56,4 @@ Route::get('/test', function()
 // Simepre se debe regitrar cada controlador
 Route::controller('personal', 'PersonalController');
 Route::controller('clase', 'Clase2Controller');
+Route::controller('publicacion', 'PublicacionController');

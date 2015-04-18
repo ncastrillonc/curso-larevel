@@ -59,7 +59,7 @@ alert (persona.nombre);*/
 
 //-----------------------------
 
-var managerScreen = managerScreen || {}
+/* var managerScreen = managerScreen || {}
 
 managerScreen = {
     cambiarColorFondo : function(color){
@@ -67,7 +67,7 @@ managerScreen = {
         /* document.body.style.background = color; */
         
         // Con JQuery
-        $('body').css('background-color', color);
+        /* $('body').css('background-color', color);
     },
     
     saludar : function(){
@@ -87,7 +87,7 @@ managerScreen = {
         }*/
         
         // Con JQuery
-        $("p").hide();
+        /* $("p").hide();
     },
     
     verUnParrafo : function(){
@@ -103,7 +103,7 @@ managerScreen = {
         }*/
         
         // Con JQuery
-        $(tag).show();
+        /* $(tag).show();
     },
     
     verOcultar : function(tag){
@@ -138,4 +138,18 @@ managerScreen = {
     }
 }
 
-var ms = managerScreen;
+var ms = managerScreen; */
+
+var fb = {
+    comentar: function(id){
+        // alert('Estas comentado: ' + id);
+         
+        var comentario = $("#comentario-"+id);
+        
+        if(comentario.val() != ""){
+            alert(comentario.val());
+        } else {
+            alert('Este campo es obligatorio');
+        }
+    }
+}
