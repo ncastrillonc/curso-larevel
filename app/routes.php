@@ -13,11 +13,7 @@
 
 Route::get('/profile', array('before' => 'auth', function()
 {
-        $publicaciones = publicacion::orderBy('id','desc')->get();
-    
-        return View::make('perfil.profile')
-            ->with("nombre", Auth::user()->nombre_completo)
-            ->with("publicaciones", $publicaciones);
+        
 }));
 
 Route::get('/login', function()
@@ -40,10 +36,10 @@ Route::post('/loguear', function()
 
 Route::get('/logout', function()
 {
-        Auth::logout();
+        /*Auth::logout();
         Session::flush();
         return Redirect::to('/login');
-        
+        */
 });
 
 Route::get('/test', function()
@@ -54,6 +50,11 @@ Route::get('/test', function()
 });
 
 // Simepre se debe regitrar cada controlador
+
 Route::controller('personal', 'PersonalController');
 Route::controller('clase', 'Clase2Controller');
-Route::controller('publicacion', 'PublicacionController');
+
+Route::group(array('before' => 'auth'), function(){
+    Route::controller('publicacion', 'PublicacionController');
+    Route::controller('profile', 'ProfileController');
+});

@@ -1,7 +1,10 @@
 {capture assign="left"}
     <center>
-        <img src="https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11074444_10153801528280931_8272862248060801323_n.jpg?oh=745b23f6cd303ec09455d34e5083cf35&oe=557149B9" width="260" height="150">
-        <div class="well">{$nombre}</div>
+        <img src="{url('assets/img/profile')}/{$foto}" width="260" height="150">
+        <div class="well">
+            {$nombre}<br><br>
+            {$correo}
+        </div>
     </center>
 {/capture}
 

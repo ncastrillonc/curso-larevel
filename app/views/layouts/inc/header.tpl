@@ -16,7 +16,8 @@
       
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+            <input class="typeahead" data-provide="typeahead" data-source='[{$friends}]' autocomplete="off" type="text" placeholder="Amigos">
+            <!-- <input type="text" class="form-control" placeholder="Search"> -->
         </div>
         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </form>
@@ -36,7 +37,7 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
-            <li><a href="{url('/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Salir</a></li>
+            <li><a href="{url('profile/logout')}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Salir</a></li>
           </ul>
         </li>
       </ul>

@@ -48,7 +48,18 @@ class CreateTableUsuario extends Migration {
                         'correo' => 'luis@gmail.com',
                         'password' => Hash::make('abcd123')
                     ]);
-            
+            DB::table('usuario')
+                    ->insert([
+                        'nombre_completo' => 'Sam',
+                        'correo' => 'sam@gmail.com',
+                        'password' => Hash::make('abcd123')
+                    ]);
+            DB::table('usuario')
+                    ->insert([
+                        'nombre_completo' => 'Eduardo',
+                        'correo' => 'ed@gmail.com',
+                        'password' => Hash::make('abcd123')
+                    ]);
 	}
 
 	/**
